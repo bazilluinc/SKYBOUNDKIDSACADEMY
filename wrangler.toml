@@ -1,0 +1,19 @@
+name = "skybound-academy"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./dist"
+
+# D1 Database Configuration
+# IMPORTANT: This binding connects your app to Cloudflare D1 database
+# To set up:
+# 1. Run: npx wrangler d1 create skyboundacademy_db
+# 2. Copy the database_id returned and update below
+# 3. Run: npx wrangler d1 execute skyboundacademy_db --file=schema.sql --remote
+
+[[d1_databases]]
+binding = "DB"
+database_name = "skyboundacademy_db"
+database_id = "4d391d81-6279-4ded-bad2-74c5e6ad4e97"
+
+# Vars for environment-specific settings
+[vars]
+ENVIRONMENT = "production"

@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: 'Pretendard', 'Noto Sans KR', system-ui, sans-serif;
+        background-color: #FDFCF0;
+        color: #1A1A1A;
+        overscroll-behavior-y: none;
+    }
+}
+
+@layer components {
+    .card {
+        @apply bg-white rounded-card shadow-soft p-6 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-washi transform -translate-y-1;
+    }
+
+    .btn-primary {
+        @apply bg-red-500 text-white font-semibold px-8 py-4 rounded-button shadow-soft hover:bg-red-600 transition-all duration-300 active:scale-95;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-grey-800 font-semibold px-8 py-4 rounded-button border-2 border-gray-200 hover:border-red-500 hover:text-red-500 transition-all duration-300;
+    }
+
+    .washi-tape {
+        @apply relative;
+    }
+
+    .washi-tape::before {
+        content: '';
+        @apply absolute -top-3 left-1/2 transform -translate-x-1/2 w-24 h-8 bg-red-400/30 rotate-1 rounded-sm shadow-sm;
+    }
+
+    .bottom-nav-item {
+        @apply flex flex-col items-center gap-1 p-2 transition-all duration-300;
+    }
+
+    .bottom-nav-item.active {
+        @apply text-red-500;
+    }
+
+    .bottom-nav-item.active svg {
+        @apply scale-110;
+    }
+}
+
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
