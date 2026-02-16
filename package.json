@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20231121.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.57.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"
@@ -37,5 +36,8 @@
     "wrangler": "^3.17.0",
     "@capacitor/cli": "^5.0.0",
     "@capacitor/android": "^5.0.0"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/rollup-linux-x64-glibc@latest"
   }
 }
