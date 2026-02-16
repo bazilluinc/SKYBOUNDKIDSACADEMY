@@ -1,0 +1,29 @@
+# Cloudflare Pages Headers Configuration
+# This file is critical for CORS and proper API function handling
+
+# API Functions - Allow CORS for all origins
+/api/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
+
+# Static Assets - Cache them
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# HTML pages - No cache for development
+/*.html
+  Cache-Control: no-cache
+
+# Static resources
+/*.js
+  Cache-Control: max-age=31536000, immutable
+/*.css
+  Cache-Control: max-age=31536000, immutable
+/*.png
+  Cache-Control: max-age=31536000, immutable
+/*.jpg
+  Cache-Control: max-age=31536000, immutable
+/*.svg
+  Cache-Control: max-age=31536000, immutable
